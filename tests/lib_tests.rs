@@ -1,8 +1,11 @@
+use password_generator::generate_password;
+
 extern crate password_generator;
 
+// returns a string of specified length
 #[test]
-fn test_integration_generate_password() {
-    let password = password_generator::generate_password(16);
-    assert_eq!(password.len(), 16);
-    // Optional: Additional checks for character set, etc.
+fn test_returns_string_of_specified_length() {
+    let length = 10;
+    let password = generate_password(length);
+    assert_eq!(password.len(), length);
 }
